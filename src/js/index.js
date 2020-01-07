@@ -3,6 +3,8 @@
 // const x = 23;
 // console.log(`I imported ${num} from another module called test! Variable x is ${x} `);
 
-import str from './models/Searh';
+import str from './models/Search';
 
-i9mport {add, multiply} from '.'
+import {add, multiply} from './views/searchView';
+
+console.log(`Using important functions! $(add(ID,2)} and ${multiply(3,5)}. ${str} `);
