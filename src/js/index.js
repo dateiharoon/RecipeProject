@@ -5,6 +5,8 @@
 
 import str from './models/Search';
 
-import {add, multiply} from './views/searchView';
+//import {add as a,  multiply as m, ID } from './views/searchView';
 
-console.log(`Using important functions! $(add(ID,2)} and ${multiply(3,5)}. ${str} `);
+import * as searchView from './views/searchView';
+
+console.log(`Using important functions! ${searchView.add(searchView.ID, 2)} and ${searchView.multiply(3, 5)}. ${str}`);
