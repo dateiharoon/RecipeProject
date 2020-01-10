@@ -10,9 +10,11 @@
 // import * as searchView from './views/searchView';
 
 // console.log(`Using important functions! ${searchView.add(searchView.ID, 2)} and ${searchView.multiply(3, 5)}. ${str}`);
-
+import axios from 'axios';
 async function getResults(query){
-
+    //const key = '';
+const res = axios(`forkify-api.herokuapp.com`)
+console.log(res);
 }
 
-getResults
+getResults('pizza');
