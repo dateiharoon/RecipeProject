@@ -13,8 +13,15 @@
 import axios from 'axios';
 async function getResults(query){
     //const key = '';
-const res = axios(`forkify-api.herokuapp.com`)
-console.log(res);
+    try{
+
+    
+    	const res = await axios(`https://forkify-api.herokuapp.com/api/search?&q=${query}`);
+const recipes = res.data.recipes;
+    console.log(res);}
+    catch(error){
+            alert(error)
+    }
 }
 
 getResults('pizza');
