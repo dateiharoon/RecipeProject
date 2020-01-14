@@ -35,7 +35,7 @@ import Search from  './models/Search';
  */
 const state ={};
 
-const controllSearch = () =>{
+const controllSearch = async () =>{
     //1) Get query from view
     const query = 'pizza' //TODO
     if(query){
