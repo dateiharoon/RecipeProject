@@ -54,8 +54,7 @@ document.querySelector('.search').addEventListener('submit', e =>{
     e.preventDefault();
     controllSearch();
 
+//const search = new Search ('pizza');
+//console.log(search);
 
 });
-// const search = new Search ('pizza');
-// console.log(search);
-// search.getResults();
