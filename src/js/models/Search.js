@@ -7,7 +7,7 @@ export default class Search{
     }
 
    
-async getResults(query){
+async getResults(){
     //const key = '';
     try{
 
