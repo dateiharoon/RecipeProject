@@ -40,7 +40,7 @@ const state ={};
 const controllSearch = async () =>{
     //1) Get query from view
     const query = searchView.getInput();//TODO
-    console.log(query);
+    //console.log(query);
     if(query){
         //2)New Search object add to state
         state.search = new Search(query);
@@ -50,7 +50,8 @@ const controllSearch = async () =>{
        await state.search.getResults();
 
         // 5) Render results to UI
-        console.log(state.search.result);
+       // console.log(state.search.result);
+        searchView.renderResults(state.search.result);
     }
 }
 elements.searchForm.addEventListener('submit', e =>{
