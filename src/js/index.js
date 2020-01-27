@@ -43,7 +43,8 @@ const state ={};
  */
 const controllSearch = async () =>{
     //1) Get query from view
-    const query = searchView.getInput();//TODO
+   // const query = searchView.getInput();//TODO
+    const query = 'pizza';
     //console.log(query);
     if(query){
         //2)New Search object add to state
@@ -71,7 +72,14 @@ try{
 elements.searchForm.addEventListener('submit', e =>{
     e.preventDefault();
     controllSearch();
+});
 
+
+//TESTING
+window.addEventListener('load', e =>{
+    e.preventDefault();
+    controllSearch();
+});
     elements.searchResPages.addEventListener('click' , e => {
         const btn = e.target.closest('.btn-inline');
         if (btn) {
@@ -80,12 +88,10 @@ elements.searchForm.addEventListener('submit', e =>{
             searchView.renderResults(state.search.result, goToPage);
             //console.log(goToPage);
         }
-    })
+    });
 
 //const search = new Search ('pizza');
 //console.log(search);
-
-});
 
 
 
@@ -107,6 +113,8 @@ elements.searchForm.addEventListener('submit', e =>{
      {
 // Prepare UI for changes
 state.recipe = new Recipe(id);
+//TESTING
+windows.r = state.recipe;
 // Create new recipe oject
 try{
    // get recipe data
@@ -127,7 +135,7 @@ console.log(state.recipe);
      }
  };
 
- window.addEventListener('hashchange' , controlRecipe);
- windows.addEventListener('load', cobtrolRecipe);
+ //window.addEventListener('hashchange' , controlRecipe);
+ //window.addEventListener('load', cobtrolRecipe);
 
- ['hashchange','load'].forEach(event => windows.addEventListnere(event,controlRecipe));
+ ['hashchange','load'].forEach(event => window.addEventListener(event,controlRecipe));
