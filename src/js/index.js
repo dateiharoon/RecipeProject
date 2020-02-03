@@ -100,98 +100,46 @@ elements.searchForm.addEventListener('submit', e =>{
  * 
  */
 
- //onst r = new Recipe(46956);
+ //const r = new Recipe(46956);
  //r.getRecipe();
 
-//  const controlRecipe = async () => {
+ const controlRecipe = async () => {
 
-//     // GEt id from URL
-//      const id = window.location.hash.replace('#', '');
-//      console.log(id);
+    // GEt id from URL
+     const id = window.location.hash.replace('#', '');
+     console.log(id);
 
-//      if (id)
-//      {
-// // Prepare UI for changes
-// renderLoader(elements.recipe);
+     if (id)
+     {
+// Prepare UI for changes
+renderLoader(elements.recipe);
 
-// //Create new recipe object
-// state.recipe = new Recipe(id);
-// //TESTING
-// //window.r = state.recipe;
-// // Create new recipe oject
-// try{
-//    // get recipe data
+//Create new recipe object
+state.recipe = new Recipe(id);
+//TESTING
+//window.r = state.recipe;
+// Create new recipe oject
+try{
+   // get recipe data
 
-// await state.recipe.getRecipe();
-// console.log(state.recipe.ingredients);
-// state.recipe.parseIngredients();
+await state.recipe.getRecipe();
+console.log(state.recipe.ingredients);
+state.recipe.parseIngredients();
 
-// // Calcualte servings and time
-// state.recipe.calcTime();
-// state.recipe.calcServings();
+// Calcualte servings and time
+state.recipe.calcTime();
+state.recipe.calcServings();
 
-// // render recipe
-// //console.log(state.recipe);
-// clearLoader(); 
-// recipeView.renderRecipe(state.recipe);
-// }catch (err){
-//     alert('Error processing recipe!')
-// }
-
-
-//      }
-//  };
+// render recipe
+//console.log(state.recipe);
+clearLoader(); 
+recipeView.renderRecipe(state.recipe);
+}catch (err){
+    alert('Error processing recipe!')
+}
 
 
- 
-// // ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
-
-
-//  //window.addEventListener('hashchange' , controlRecipe);
-//  //window.addEventListener('load', cobtrolRecipe);
-
-//  ['hashchange','load'].forEach(event => window.addEventListener(event,controlRecipe));
-
- 
- /** 
- * RECIPE CONTROLLER
- */
-const controlRecipe = async () => {
-    // Get ID from url
-    const id = window.location.hash.replace('#', '');
-
-    if (id) {
-        // Prepare UI for changes
-        recipeView.clearRecipe();
-        renderLoader(elements.recipe);
-
-        // Highlight selected search item
-        //8if (state.search) searchView.highlightSelected(id);
-
-        // Create new recipe object
-        state.recipe = new Recipe(id);
-
-        try {
-            // Get recipe data and parse ingredients
-            await state.recipe.getRecipe();
-            state.recipe.parseIngredients();
-
-            // Calculate servings and time
-            state.recipe.calcTime();
-            state.recipe.calcServings();
-    
-            // Render recipe
-            clearLoader();
-            recipeView.renderRecipe(
-                state.recipe,
-                state.likes.isLiked(id)
-            );
-
-        } catch (err) {
-            console.log(err);
-            alert('Error processing recipe!');
-        }
-    }
-};
+     }
+ };
 
 ['hashchange','load'].forEach(event => window.addEventListener(event,controlRecipe));
